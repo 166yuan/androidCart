@@ -9,39 +9,45 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User extends BasicModel{
-    private String userName;
-    private String accoutPassw;
+    private String account;
+    private String password;
+    private String username;
 
-    public String getAccoutPassw() {
-        return accoutPassw;
+    public String getAccount() {
+        return account;
     }
 
-    public void setAccoutPassw(String accoutPassw) {
-        this.accoutPassw = accoutPassw;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public static boolean getUser(String userName){
-        User u= find("userName = ? ",userName).first();
-        if(u!=null){
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public static User getUser(String account){
+        User user=User.find("account = ?", account).first();
+        return user;
+    }
+
+    public static boolean login(String account,String password){
+        User user=User.find("account = ? and password = ?",account,password).first();
+        if(user!=null){
             return true;
         }else {
             return false;
-        }
-    }
-    public static boolean userLogin(String userName,String password){
-        User u=find("userName = ? and accoutPassw=?",userName,password).first();
-        if(u==null){
-            return false;
-        }else {
-            return true;
         }
     }
 }

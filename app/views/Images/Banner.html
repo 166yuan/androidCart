@@ -1,0 +1,7 @@
+#{extends 'main.html' /}
+#{set title:'ÂÖ²¥Í¼ÉÏ´«²âÊÔ' /}
+<form action="@{Images.addBanner}" method="post" enctype="multipart/form-data">
+    <label for="file">please select a picture,<span>support type:jpg gif png bmp</span></label>
+    <input type="file" id="InputFile" name="file"  accept="image/*">
+    <button type="submit">submit</button>
+</form>

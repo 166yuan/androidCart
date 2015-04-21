@@ -1,36 +1,56 @@
 package beans;
 
+import models.Image;
+
 /**
  * Created by Administrator on 2015/4/12.
  */
 public class ImageBean {
-    private String isOk;
-    private String imgStr;
-    private String imgName;
+    private Integer isOk;
+    private String id;
+    private String url;
+    private String name;
     private String message;
+    private Object[]imges;
 
-    public String getIsOk() {
+    public Object[] getImges() {
+        return imges;
+    }
+
+    public void setImges(Object[] imges) {
+        this.imges = imges;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Integer getIsOk() {
         return isOk;
     }
 
-    public void setIsOk(String isOk) {
+    public void setIsOk(Integer isOk) {
         this.isOk = isOk;
     }
 
-    public String getImgStr() {
-        return imgStr;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImgStr(String imgStr) {
-        this.imgStr = imgStr;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getImgName() {
-        return imgName;
+    public String getName() {
+        return name;
     }
 
-    public void setImgName(String imgName) {
-        this.imgName = imgName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getMessage() {
